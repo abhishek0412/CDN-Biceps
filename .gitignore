@@ -13,5 +13,15 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-infra/*.tfstate
-infra/.terraform/
+*.tfstate
+.terraform/
+# Environment files
+.env.*
+# Yarn
+yarn.lock
+# macOS
+.AppleDouble
+.LSOverride
+# Docker
+*.pid
+docker-compose.override.yml
