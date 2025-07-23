@@ -1,4 +1,5 @@
 # Simple GitHub Actions pipeline to build and publish Bicep files as artifacts
+
 name: Build and Publish Bicep Artifacts
 
 on:
@@ -18,8 +19,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Bicep CLI
-        uses: Azure/setup-bicep@v2
+      - name: Install Bicep CLI
+        run: |
+          curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+          chmod +x ./bicep
+          sudo mv ./bicep /usr/local/bin/bicep
+          bicep --version
 
       - name: Validate Bicep files
         run: |
@@ -28,7 +33,8 @@ jobs:
           done
 
       - name: Upload Bicep files as artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: bicep-files
+          path: '**/*.bicep'
           path: '**/*.bicep'
