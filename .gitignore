@@ -1,0 +1,17 @@
+# Ignore node_modules, build, logs, and OS files
+node_modules/
+build/
+dist/
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+.env
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+infra/*.tfstate
+infra/.terraform/
