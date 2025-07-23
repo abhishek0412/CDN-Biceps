@@ -2,7 +2,5 @@
 module infraModule './infra/main.bicep' = {
   name: 'infraDeployment'
   scope: resourceGroup('CrestAvenue-EU')
-  params: {
-    prefix: 'cdn'
-  }
+params {}
 }

@@ -49,7 +49,7 @@ resource cdnEndpoint 'Microsoft.Cdn/profiles/endpoints@2023-05-01' = {
       {
         name: 'storageOrigin'
         properties: {
-          hostName: '${storageAccount.name}.blob.core.windows.net'
+                    hostName: '${storageAccount.name}.blob.${environment().suffixes.storage}'
         }
       }
     ]
@@ -90,7 +90,7 @@ resource blobContributorRole 'Microsoft.Authorization/roleAssignments@2020-04-01
     roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')
     principalId: deploymentScriptIdentity.properties.principalId
   }
-  dependsOn: [storageAccount, deploymentScriptIdentity]
+    // dependsOn removed as per linter warning
 }
 
 // Deployment script to upload sample.json
