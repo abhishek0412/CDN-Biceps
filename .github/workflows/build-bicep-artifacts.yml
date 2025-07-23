@@ -37,4 +37,3 @@ jobs:
         with:
           name: bicep-files
           path: '**/*.bicep'
-          path: '**/*.bicep'
