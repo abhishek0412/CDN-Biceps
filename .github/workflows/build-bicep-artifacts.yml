@@ -1,0 +1,34 @@
+# Simple GitHub Actions pipeline to build and publish Bicep files as artifacts
+name: Build and Publish Bicep Artifacts
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Bicep CLI
+        uses: Azure/setup-bicep@v2
+
+      - name: Validate Bicep files
+        run: |
+          for file in $(find . -name '*.bicep'); do
+            bicep build "$file"
+          done
+
+      - name: Upload Bicep files as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: bicep-files
+          path: '**/*.bicep'
