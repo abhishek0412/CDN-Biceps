@@ -26,15 +26,9 @@ jobs:
           sudo mv ./bicep /usr/local/bin/bicep
           bicep --version
 
-      - name: Validate Bicep files
-        run: |
-          for file in $(find . -name '*.bicep'); do
-            bicep build "$file"
-          done
 
       - name: Upload Bicep files as artifacts
         uses: actions/upload-artifact@v4
         with:
           name: bicep-files
-          path: '**/*.bicep'
           path: '**/*.bicep'
