@@ -1,8 +1,8 @@
 ---
 post_title: Azure CDN Static File Delivery
-author1: abchoudhary
+author1: abc
 post_slug: azure-cdn-static-file-delivery
-microsoft_alias: abchoudhary
+microsoft_alias: abc
 featured_image: https://docs.microsoft.com/en-us/azure/cdn/media/cdn-overview.png
 categories: [azure, infrastructure, cdn]
 tags: [cdn, bicep, azure, static-files, deployment]
