@@ -1,16 +1,3 @@
----
-post_title: Azure CDN Static File Delivery
-author1: abc
-post_slug: azure-cdn-static-file-delivery
-microsoft_alias: abc
-featured_image: https://docs.microsoft.com/en-us/azure/cdn/media/cdn-overview.png
-categories: [azure, infrastructure, cdn]
-tags: [cdn, bicep, azure, static-files, deployment]
-ai_note: true
-summary: This project provisions Azure CDN and Storage resources using Bicep to securely deliver a public JSON file with automated deployment and cache bypass.
-post_date: 2025-07-23
----
-
 ## Project Overview
 
 This project automates the deployment of Azure CDN and Storage resources using Bicep. It enables secure, public delivery of a sample JSON file via CDN, with cache bypass and static resource naming for predictable access.
